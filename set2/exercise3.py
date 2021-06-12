@@ -31,6 +31,8 @@ def fix_it(moves=True, should_move=True):
         return "Duct Tape"
     elif not moves and should_move:
         return "WD-40"
+    else:
+        return "something's weird, run!"
 
     
 
@@ -55,7 +57,12 @@ def loops_1c(number_of_items=5, symbol="#"):
     string with exacly one symbol in it.
     E.g.: ['#', '#', '#', '#', '#']
     """
-    return None
+    a_list = []
+    for i in range (number_of_items):
+        a_list.append(symbol)
+    return a_list
+
+
 
 
 def loops_2():
