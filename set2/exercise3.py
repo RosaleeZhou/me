@@ -233,11 +233,11 @@ def loops_6():
     a_wedge = []
     for i in range(10):
         row = []
-        for j in range(i+1):
+        for j in range(i + 1):
             row.append(j)
         a_wedge.append(row)
     return a_wedge
-    
+
 
         
 
