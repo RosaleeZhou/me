@@ -33,6 +33,7 @@ def fix_it(moves=True, should_move=True):
         return "WD-40"
     else:
         return "something's weird, run!"
+        
 
     
 
@@ -123,7 +124,6 @@ def loops_3():
             number_list.append(str(i))
         a_number_block.append(number_list)
 
-    print (a_number_block)
     return a_number_block
 
 
@@ -159,7 +159,6 @@ def loops_4():
             number_list.append(int)
         number_block.append(number_list)
 
-    print (number_block)
     return number_block
 
 
