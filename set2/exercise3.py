@@ -164,7 +164,7 @@ def loops_4():
     for j in range(10):
         number_list = []
         for i in range(10):
-            number_list.append(int)
+            number_list.append(j)
         number_block.append(number_list)
     
     return number_block
