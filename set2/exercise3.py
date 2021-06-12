@@ -203,6 +203,7 @@ def loops_5():
         for j in range(5):
             coordinates_row.append("(i" + str(i) + ", j" + str(j) + ")")
         coordinates_block.append(coordinates_row)
+    
     return coordinates_block
 
 
@@ -266,12 +267,23 @@ def loops_7():
     pyramid = []
     for i in range(5):
         row = []
-        if i < 4:
-            row.append(" " * (7 - 2 * i) + " *" * (2 * i + 1))
-        else:
-            row.append("*" + (2*i) * " *")
+        for j in range(4-i):
+            row.append(" ")
+        for j in range(2*i+1):
+            row.append("*")
+        for j in range(4-i):
+            row.append(" ")
         pyramid.append(row)
+    print(pyramid)
     return pyramid
+    
+
+
+
+
+
+
+
 
 
 
