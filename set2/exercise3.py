@@ -201,7 +201,7 @@ def loops_5():
     for i in range(10):
         coordinates_row = []
         for j in range(5):
-            coordinates_row.append("(i" + str(i) + "," + str(j) + ")")
+            coordinates_row.append("(i" + str(i) + ",j" + str(j) + ")")
         coordinates_block.append(coordinates_row)
 
     return coordinates_block
