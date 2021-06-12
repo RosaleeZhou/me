@@ -266,7 +266,7 @@ def loops_7():
     pyramid = []
     for i in range(5):
         row = []
-        row.append(" " * (5-i) + "*" * (2 * i + 1) + " " * (5-i))
+        row.append(" " * (5 - i) + "*" * (2 * i + 1) + " " * (5 - i))
         pyramid.append(row)
     
     return pyramid
