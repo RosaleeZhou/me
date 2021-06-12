@@ -118,14 +118,15 @@ def loops_3():
          so call str(number) to cast.
     """
 
-    a_number_block = []
+    a_number_square = []
     for i in range(10):
-        a_number_list = []
+        a_number_row = []
         for j in range(10):
-            a_number_list.append(str(i))
-            a_number_block.append(a_number_list)
-    print (a_number_block)
-    return a_number_block
+            a_number_row.append(str(i))
+        a_number_square.append(a_number_row)
+    
+    return a_number_square
+
 
 
 
@@ -164,8 +165,8 @@ def loops_4():
         number_list = []
         for i in range(10):
             number_list.append(int)
-            number_block.append(number_list)
-    print (number_block)
+        number_block.append(number_list)
+    
     return number_block
 
 
