@@ -160,12 +160,12 @@ def loops_4():
       ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
     ]
     """
-
-    a_number_square = []
+    number_block = []
     for i in range(10):
-        a_number_square.append(range(10))
-        
-    return a_number_square
+        number_block.append(range(10))
+    return number_block
+    
+
 
 
 
