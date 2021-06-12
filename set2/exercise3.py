@@ -116,7 +116,19 @@ def loops_3():
     TIP: notice that this needs to to return strings of numbers,
          so call str(number) to cast.
     """
-    a_block_of_numbers = []
+    a_number_block = []
+    for j in range(10):
+        number_list = []
+        for i in range(10):
+            number_list.append(str(i))
+        a_number_block.append(number_list)
+
+    print (a_number_block)
+    return a_number_block
+
+
+def loops_4():
+    """Make a block of numbera_block_of_numbers = []
     for j in range(10):
         number_list = []
         for i in range(10):
@@ -124,18 +136,7 @@ def loops_3():
         a_block_of_numbers.append(number_list)
 
     print (a_block_of_numbers)
-    return a_block_of_numbers
-
-
- 
-
-    
-
-
-
-
-def loops_4():
-    """Make a block of numbers that rises left to right.
+    return a_block_of_numberss that rises left to right.
 
     Return this:
     [
@@ -151,7 +152,15 @@ def loops_4():
       ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
     ]
     """
-    return None
+    number_block = []
+    for j in range(10):
+        number_list = []
+        for i in range(10):
+            number_list.append(int)
+        number_block.append(number_list)
+
+    print (number_block)
+    return number_block
 
 
 def loops_5():
