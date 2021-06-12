@@ -123,7 +123,7 @@ def loops_3():
         for i in range(10):
             number_list.append(str(i))
         a_number_block.append(number_list)
-
+    print (a_number_block)
     return a_number_block
 
 
