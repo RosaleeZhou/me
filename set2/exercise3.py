@@ -197,7 +197,15 @@ def loops_5():
         "There are {} green bottles".format(8)
     you'll come to see the pros and cons of each over time.
     """
-    return None
+    coordinates_block = []
+    for i in range(10):
+        coordinates_row = []
+        for j in range(5):
+            coordinates_row.append("(i" + str(i) + ",j" + str(j) + ")")
+        coordinates_block.append(coordinates_row)
+
+    return coordinates_block
+    
 
 
 def loops_6():
