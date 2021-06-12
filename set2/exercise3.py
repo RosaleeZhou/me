@@ -83,7 +83,16 @@ def loops_2():
             ['*', '*', '*', '*', '*', '*', '*', '*', '*', '*'],
           ]
     """
-    return None
+    a_square_field = [] 
+    for j in range(10):
+        star_list = []
+        for i in range (10):
+            star_list.append("*")
+        a_square_field.append(star_list)
+    return a_square_field
+
+
+    
 
 
 def loops_3():
@@ -107,7 +116,22 @@ def loops_3():
     TIP: notice that this needs to to return strings of numbers,
          so call str(number) to cast.
     """
-    return None
+    a_block_of_numbers = []
+    for j in range(10):
+        number_list = []
+        for i in range(10):
+            number_list.append(str(i))
+        a_block_of_numbers.append(number_list)
+
+    print (a_block_of_numbers)
+    return a_block_of_numbers
+
+
+ 
+
+    
+
+
 
 
 def loops_4():
