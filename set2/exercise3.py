@@ -266,9 +266,11 @@ def loops_7():
     pyramid = []
     for i in range(5):
         row = []
-        row.append(" " * (5 - i) + "*" * (2 * i + 1) + " " * (5 - i))
+        if i < 4:
+            row.append(" " * (7 - 2 * i) + " *" * (2 * i + 1))
+        else:
+            row.append("*" + (2*i) * " *")
         pyramid.append(row)
-    
     return pyramid
 
 
