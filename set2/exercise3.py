@@ -204,7 +204,7 @@ def loops_5():
             coordinates_row.append("(i" + str(i) + ", j" + str(j) + ")")
         coordinates_block.append(coordinates_row)
     return coordinates_block
-    
+
 
     
 
@@ -230,7 +230,16 @@ def loops_6():
     You can use a variable.
     TIP: look out for the starting condition.
     """
-    return None
+    a_wedge = []
+    for i in range(10):
+        row = []
+        for j in range(i+1):
+            row.append(j)
+        a_wedge.append(row)
+    return a_wedge
+    
+
+        
 
 
 def loops_7():
