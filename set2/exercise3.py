@@ -263,7 +263,14 @@ def loops_7():
     This is a hard problem. Use lots of experimentation and draw
     lots of diagrams!
     """
-    return None
+    pyramid = []
+    for i in range(5):
+        row = []
+        for j in range(10):
+            row.append(" " * (5-i) + "*" + " " * (5-i))
+        pyramid.append(row)
+    return pyramid
+
 
 
 def little_printer(some_kind_of_list, exercise_name):
