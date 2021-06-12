@@ -119,10 +119,10 @@ def loops_3():
     """
 
     a_number_block = []
-    for ji in range(10):
+    for i in range(10):
         a_number_list = []
         for j in range(10):
-            a_number_list.append(str(j))
+            a_number_list.append(str(i))
             a_number_block.append(a_number_list)
     print (a_number_block)
     return a_number_block
