@@ -164,11 +164,10 @@ def loops_4():
     for i in range(10):
         a_number_row = []
         for j in range(10):
-            a_number_row.append(j)
+            a_number_row.append(str(j))
         a_number_square.append(a_number_row)
     
     return a_number_square
-
 
 
 
