@@ -117,14 +117,21 @@ def loops_3():
     TIP: notice that this needs to to return strings of numbers,
          so call str(number) to cast.
     """
+
     a_number_block = []
     for j in range(10):
-        number_list = []
+        a_number_list = []
         for i in range(10):
-            number_list.append(str(i))
-        a_number_block.append(number_list)
+            a_number_list.append(str(i))
+            a_number_block.append(a_number_list)
     print (a_number_block)
     return a_number_block
+
+
+
+   
+
+
 
 
 def loops_4():
@@ -157,9 +164,10 @@ def loops_4():
         number_list = []
         for i in range(10):
             number_list.append(int)
-        number_block.append(number_list)
-
+            number_block.append(number_list)
+    print (number_block)
     return number_block
+
 
 
 def loops_5():
