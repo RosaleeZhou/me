@@ -28,9 +28,9 @@ def fix_it(moves=True, should_move=True):
     if moves == should_move:
         return "No Problem"
     elif moves and not should_move:
-        return "WD-40"
-    elif not moves and should_move:
         return "Duct Tape"
+    elif not moves and should_move:
+        return "WD-40"
     else:
         return "something's weird, run!"
 
@@ -274,7 +274,7 @@ def loops_7():
         for j in range(4-i):
             row.append(" ")
         pyramid.append(row)
-    print(pyramid)
+    
     return pyramid
     
 
@@ -328,3 +328,5 @@ if __name__ == "__main__":
     little_printer(loops_5(), "loops_5")
     little_printer(loops_6(), "loops_6")
     little_printer(loops_7(), "loops_7")
+
+
