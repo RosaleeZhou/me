@@ -5,6 +5,9 @@ Modify each function until the tests pass.
 """
 
 
+from typing import MutableSequence
+
+
 def loop_ranger(start, stop=None, step=1):
     """Return a list of numbers between start and stop in steps of step.
 
@@ -12,7 +15,13 @@ def loop_ranger(start, stop=None, step=1):
     The look up the docs for range(), you can answer this with just the range 
     function, but we'd like you to do it the long way, probably using a loop.
     """
-    return None
+    list_1 = []
+    for i in range(start, stop, step):
+        list_1.append(i)
+    return list_1
+
+
+
 
 
 def lone_ranger(start, stop, step):
@@ -20,7 +29,12 @@ def lone_ranger(start, stop, step):
 
     Look up the docs for range() and wrap it in a 1:1 way
     """
-    return None
+    list_2 = []
+    for i in range(start, stop, step):
+        list_2.append(i)
+    return list_2
+
+
 
 
 def two_step_ranger(start, stop):
@@ -29,7 +43,12 @@ def two_step_ranger(start, stop):
     Sometimes you want to hide complexity.
     Make a range function that always has a step size of 2
     """
-    return None
+    list_3 = []
+    for i in range(start, stop, 2):
+        list_3.append(i)
+
+    return list_3
+
 
 
 def stubborn_asker(low, high):
@@ -40,7 +59,14 @@ def stubborn_asker(low, high):
 
     Look up the docs for input
     """
-    return None
+    message = "Give a number between {low}, and {high}".format(low=low, high=high)
+    while True:
+        input_number = input(message)
+        if low < input_number < high:
+            return(input_number)
+        else:
+            print("Sorry try again".format(low=low, high=high))
+        
 
 
 def not_number_rejector(message):
@@ -50,9 +76,18 @@ def not_number_rejector(message):
     (e.g. "cow", "six", "8!") then throw it out and ask for an actual number.
     When you do get a number, return it.
     """
-    return None
+    while True:
+        try:
+            input_thing = int(input(message))
+            print("That looks great.".format(input_thing))
+            return input_thing
+        except Exception as e:
+            print("Sorry try again, I want a number.")
+
+        
 
 
+    
 def super_asker(low, high):
     """Robust asking function.
 
@@ -61,7 +96,19 @@ def super_asker(low, high):
     Try to call at least one of the other functions to minimise the
     amount of code.
     """
-    return None
+    message = "Give a number between {low}, and {high}".format(low=low, high=high)
+    while True:
+        try: 
+            input_thing = int(input(message))
+            if low < input_thing < high:
+                print("That looks great!")
+            else:
+                return(input_thing)
+            print("Sorry, try agin")
+            break
+        except Exception as e:
+            print("Sorry, I want a number.")
+
 
 
 if __name__ == "__main__":
