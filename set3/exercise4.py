@@ -30,28 +30,32 @@ def binary_search(low, high, actual_number):
     print("It's a guess game!")
     print("Ok I'll find the number between {low} and {high} for you".format(low=low,high=high))
 
-
-    low = 0
-    high = high - 1
     
+    low= 0
+    high= len(range(low,high)) - 1
 
-    while low != high:
+    while low <= high:
         mid = (low + high) // 2
-        guess = random.randint(low, high)
+        guess = mid
 
-        if guess > actual_number:
-            high = mid - 1
-            print("Guessed {}, not the one".format(guess))
-            tries = tries + 1
+        if guess == actual_number:
+            print("Got it, it was {}. ".format(actual_number))
+            return {"guess": guess, "tries": tries}
+
         elif guess < actual_number:
             low = mid + 1
             print("Guessed {}, not the one".format(guess))
+             
             tries = tries + 1
-       
-    else:
-        print("Got it, it was {}. ".format(actual_number))
-        tries = str(tries)
-
+        elif guess > actual_number:
+            high = mid - 1
+            print("Guessed {}, not the one".format(guess))
+            
+            tries = tries + 1
+        elif mid == low:
+            print("Got it, it was {}. ".format(actual_number))
+            tries = str(tries)
+    
     return {"guess": guess, "tries": tries}
 
 
