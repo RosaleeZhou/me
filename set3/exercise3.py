@@ -32,6 +32,9 @@ def advancedGuessingGame():
         lowerBound = int(input("Enter a lower bound: "))
       except ValueError as e:
         print("Hey mate, a pure digital number is better for me to understand ")
+        continue
+      if lowerBound > 20:
+        print("Hey mate, {} is bigger than 20".format(lowerBound))
       else:
         print("OK then, a number between {low} and 20 ?".format(low=lowerBound))
         break
