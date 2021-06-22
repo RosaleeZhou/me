@@ -26,18 +26,18 @@ def advancedGuessingGame():
     purpose if you can!
     """
     print("\nWelcome to the guessing game!")
-    print("A number between 0 and _ ?")
+    print("A number between _ and 20 ?")
     while True:
       try:
-        upperBound = int(input("Enter an upper bound: "))
+        lowerBound = int(input("Enter a lower bound: "))
       except ValueError as e:
-        print("Hey mate, a pure digital number is better for me to understand: ")
+        print("Hey mate, a pure digital number is better for me to understand ")
       else:
-        print("OK then, a number between 0 and {high} ?".format(high=upperBound))
+        print("OK then, a number between {low} and 20 ?".format(low=lowerBound))
         break
 
-    upperBound = int(upperBound)
-    actural_number = random.randint(0, upperBound)
+    lowerBound = int(lowerBound)
+    actural_number = random.randint(lowerBound, 20)
 
     while True:
       try:
@@ -45,7 +45,9 @@ def advancedGuessingGame():
       except ValueError as e:
         print("Hey mate, please give me a pure digital number:")
         continue
-      if guess > int(upperBound):
+      if guess < int(lowerBound):
+        print("Hey mate, TOO SMALl ")
+      if guess > 20:
         print("Hey mate, you go too wild!:")
       if guess > actural_number:
         print("Too big, try again: ")
