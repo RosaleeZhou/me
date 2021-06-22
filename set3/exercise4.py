@@ -33,15 +33,16 @@ def binary_search(low, high, actual_number):
 
     low = 0
     high = high - 1
+    guess = random.randict(low,high)
 
     while guess != actual_number:
         mid = (low + high) // 2
-        guess = mid
-        if mid < actual_number:
+       
+        if guess < mid:
             low = mid + 1
             print("Guessed {}, not the one".format(guess))
             tries = tries + 1
-        elif mid > actual_number:
+        elif guess > mid:
             high = mid - 1
             print("Guessed {}, not the one".format(guess))
             tries = tries + 1
