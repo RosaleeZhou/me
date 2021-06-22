@@ -2,7 +2,7 @@
 """Set 3, Exercise 4."""
 
 
-import math
+import random
 
 # import time
 
@@ -27,19 +27,27 @@ def binary_search(low, high, actual_number):
     tries = 0
     guess = 0
 
-    while low <= high:
+    print("It's a guess game!")
+    print("Ok I'll find the number between {low} and {high} for you".format(low=low,high=high))
+
+
+    low = 0
+    high = high - 1
+
+    while guess != actual_number:
         mid = (low + high) // 2
-        
-        if guess < actual_number:
+        guess = mid
+        if mid < actual_number:
             low = mid + 1
             print("Guessed {}, not the one".format(guess))
-        elif guess > actual_number:
-            high = mid -1
-        else:
-            print("Got it! It was {}".format(actual_number))
-
-
-    # Write your code in here
+            tries = tries + 1
+        elif mid > actual_number:
+            high = mid - 1
+            print("Guessed {}, not the one".format(guess))
+            tries = tries + 1
+    else:
+        print("Got it, it was {}. ".format(actual_number))
+        tries = str(tries)
 
     return {"guess": guess, "tries": tries}
 
