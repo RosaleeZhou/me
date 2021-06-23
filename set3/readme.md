@@ -1,1 +1,3 @@
 TODO: Reflect on what you learned this week and what is still unclear.
+Okey....At the beginning of this week's exercises, I felt so confused and struggling with the new built-in functions. But when I finished the exercise 1 and tried to think the logic of ex2 example by myself, I suddenly could understand how the while loop and try-except functions work. 
+And I was doing the binary search one quite smoothly! 
