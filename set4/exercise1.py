@@ -36,7 +36,14 @@ def get_some_details():
     json_data = open(LOCAL + "/lazyduck.json").read()
 
     data = json.loads(json_data)
-    return {"lastName": None, "password": None, "postcodePlusID": None}
+
+    lastName = data['results'][0]['name']['last']
+    password = data['results'][0]['login']['password']
+    postcode = int(data['results'][0]['location']['postcode'])
+    ID = int(data['results'][0]['id']['value'])
+
+    return {"lastName": lastName, "password": password, "postcodePlusID": postcode + ID}
+
 
 
 def wordy_pyramid():
@@ -73,7 +80,25 @@ def wordy_pyramid():
     ]
     TIP: to add an argument to a URL, use: ?argName=argVal e.g. &wordlength=
     """
-    pass
+    words = []
+
+    for i in range(3, 21, 2):  # upper half
+        url = 'https://us-central1-waldenpondpress.cloudfunctions.net/give_me_a_word?wordlength={}'.format(i)
+        response = requests.get(url)
+        word = response.text  # a word like "taa"
+        words.append(word)
+
+    for i in range(20, 3, -2):  # bottom half
+        url = 'https://us-central1-waldenpondpress.cloudfunctions.net/give_me_a_word?wordlength={}'.format(i)
+        response = requests.get(url)
+        word = response.text  # a word like "taa"
+        words.append(word)
+
+    return words
+
+
+
+
 
 
 def pokedex(low=1, high=5):
@@ -90,13 +115,23 @@ def pokedex(low=1, high=5):
          get very long. If you are accessing a thing often, assign it to a
          variable and then future access will be easier.
     """
+    max_height = 0
+    the_weight = 0
+    the_name = ''
     template = "https://pokeapi.co/api/v2/pokemon/{id}"
 
-    url = template.format(id=5)
-    r = requests.get(url)
-    if r.status_code is 200:
-        the_json = json.loads(r.text)
-    return {"name": None, "weight": None, "height": None}
+    for i in range(low, high+1):
+        url = template.format(id=i)
+        r = requests.get(url)
+        if r.status_code == 200:
+            the_json = json.loads(r.text)
+            height = the_json['height']
+            if height > max_height:
+                max_height = height
+                the_weight = the_json['weight']
+                the_name = the_json['name']
+
+    return {"name": the_name, "weight": the_weight, "height": max_height}
 
 
 def diarist():
@@ -113,6 +148,18 @@ def diarist():
          the test will have nothing to look at.
     TIP: this might come in handy if you need to hack a 3d print file in the future.
     """
+    count = 0
+    with open('Trispokedovetiles(laser).gcode', 'r') as f:
+        lines = f.readlines()
+        for line in lines:
+            if 'M10 P1' in line.upper():
+                count = count + 1
+    
+    f = open('lasers.pew', 'w')
+    f.write(str(count))
+    f.close()
+
+    
     pass
 
 
