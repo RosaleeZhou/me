@@ -7,6 +7,8 @@ import requests
 import inspect
 import sys
 
+from requests.api import request
+
 # Handy constants
 LOCAL = os.path.dirname(os.path.realpath(__file__))  # the context of this file
 CWD = os.getcwd()  # The curent working directory
@@ -80,21 +82,7 @@ def wordy_pyramid():
     ]
     TIP: to add an argument to a URL, use: ?argName=argVal e.g. &wordlength=
     """
-    words = []
 
-    for i in range(3, 21, 2):  # upper half
-        url = 'https://us-central1-waldenpondpress.cloudfunctions.net/give_me_a_word?wordlength={}'.format(i)
-        response = requests.get(url)
-        word = response.text  # a word like "taa"
-        words.append(word)
-
-    for i in range(20, 3, -2):  # bottom half
-        url = 'https://us-central1-waldenpondpress.cloudfunctions.net/give_me_a_word?wordlength={}'.format(i)
-        response = requests.get(url)
-        word = response.text  # a word like "taa"
-        words.append(word)
-
-    return words
 
 
 
@@ -118,6 +106,7 @@ def pokedex(low=1, high=5):
     max_height = 0
     the_weight = 0
     the_name = ''
+
     template = "https://pokeapi.co/api/v2/pokemon/{id}"
 
     for i in range(low, high+1):
@@ -132,6 +121,7 @@ def pokedex(low=1, high=5):
                 the_name = the_json['name']
 
     return {"name": the_name, "weight": the_weight, "height": max_height}
+
 
 
 def diarist():
@@ -158,9 +148,6 @@ def diarist():
     f = open('lasers.pew', 'w')
     f.write(str(count))
     f.close()
-
-    
-    pass
 
 
 if __name__ == "__main__":
