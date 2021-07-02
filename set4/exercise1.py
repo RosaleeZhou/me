@@ -1,6 +1,6 @@
 """All about IO."""
 
-
+import random
 import json
 import os
 import requests
@@ -8,6 +8,9 @@ import inspect
 import sys
 
 from requests.api import request
+from requests.models import Response
+
+
 
 # Handy constants
 LOCAL = os.path.dirname(os.path.realpath(__file__))  # the context of this file
@@ -83,10 +86,33 @@ def wordy_pyramid():
     TIP: to add an argument to a URL, use: ?argName=argVal e.g. &wordlength=
     """
 
+    pyramid = []
+    
+    for i in range(3, 21, 2):     
+        word = get_a_word(i)
+        pyramid.append(word)
+       
+    for i in range(20, 3, -2):   
+        word = get_a_word(i)
+        pyramid.append(word)
+    
+    return pyramid
 
+def get_a_word(i):
+    url = 'https://us-central1-waldenpondpress.cloudfunctions.net/give_me_a_word?wordlength={}'
+    response = requests.get(url.format(i))
+    word = response.text
+    return word
 
+# def do_useless(x):
+#     x = addy(x)
+#     return x 
 
+# def addy(x):
+#     x += 5
+#     return x 
 
+# print(do_useless(4)）
 
 
 def pokedex(low=1, high=5):
