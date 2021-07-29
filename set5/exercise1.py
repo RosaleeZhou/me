@@ -51,11 +51,23 @@ def wordy_pyramid():
 
 
 def get_a_word_of_length_n(length):
-    pass
+    url = "https://us-central1-waldenpondpress.cloudfunctions.net/give_me_a_word?wordlength={length}"
+    r = requests.get(url.format(length = i))
+    message = r.text
+    return message
 
 
 def list_of_words_with_lengths(list_of_lengths):
-    pass
+    for i in range(3, 21, 2):
+        message = get_a_word_of_length_n(i)
+        pyramid.append(message)
+       
+    for i in range(20, 3, -2):   
+        message = get_a_word_of_length_n(i)
+        pyramid.append(message)
+    
+    return pyramid
+
 
 
 if __name__ == "__main__":
